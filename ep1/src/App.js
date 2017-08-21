@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-const App = () =>
-  <div>
-    <input type="search" placeholder="search" />
-    <ul>
-      <li>
-        <img src="#" role="presentation" />
+class App extends Component {
+  render() {
+    return (
+      <div className="appContainer">
+        <input type="search" placeholder="search" />
         <div>
-          <strong>name</strong>
-          <strong>email</strong>
+          <ul>
+            <li>
+              <img src="#" role="presentation" />
+              <div>
+                <strong>name</strong>
+                <br />
+                <strong>email</strong>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
-  </div>;
+      </div>
+    );
+  }
+}
 
 export default App;
