@@ -1,26 +1,18 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+body {
+  display: flex;
+  justify-content: center;
   padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 .appContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 5px;
 }
 
 @keyframes App-logo-spin {
