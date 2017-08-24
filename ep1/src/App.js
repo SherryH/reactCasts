@@ -30,14 +30,6 @@ class App extends Component {
         <input type="search" placeholder="search" />
         <div>
           <ul>
-            <li>
-              <img src="#" role="presentation" />
-              <div>
-                <strong>name</strong>
-                <br />
-                <strong>email</strong>
-              </div>
-            </li>
             {this.state.contacts.map(contact =>
               <li>
                 <img src={contact.picture} role="presentation" />
