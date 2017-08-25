@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ContactsApp from './components/ContactsApp';
 
 class App extends Component {
   state = {
@@ -27,25 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="appContainer">
-        <input type="search" placeholder="search" />
-        <div>
-          <ul>
-            {this.state.contacts.map(contact =>
-              <li>
-                <img src={contact.picture} role="presentation" />
-                <div>
-                  <strong>
-                    {contact.name}
-                  </strong>
-                  <br />
-                  <strong>
-                    {contact.email}
-                  </strong>
-                </div>
-              </li>
-            )}
-          </ul>
-        </div>
+        <ContactsApp contacts={this.state.contacts} />
       </div>
     );
   }
