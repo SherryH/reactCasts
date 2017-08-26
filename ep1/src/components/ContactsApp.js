@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import '../App.css';
+import SearchBar from './SearchBar';
 
 class ContactsApp extends Component {
   static propTypes = {
@@ -10,10 +11,23 @@ class ContactsApp extends Component {
     }).isRequired
   };
 
+  state = {
+    filterText: ''
+  };
+
+  getUserInput = input => {
+    this.setState({
+      filterText: input
+    });
+  };
+
   render() {
     return (
       <div>
-        <input type="search" placeholder="search" />
+        <SearchBar
+          filterText={this.state.filterText}
+          onUserChange={this.getUserInput}
+        />
         <ul>
           {this.props.contacts.map(contact =>
             <li>
