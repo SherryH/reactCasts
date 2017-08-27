@@ -2,14 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import '../App.css';
 import SearchBar from './SearchBar';
 import ContactList from './ContactList';
+import LoadingHOC from './HOC/LoadingHOC';
 
 class ContactsApp extends Component {
   static propTypes = {
-    contacts: PropTypes.arrayOf({
-      name: PropTypes.string,
-      email: PropTypes.string,
-      picture: PropTypes.string
-    }).isRequired
+    contacts: PropTypes.arrayOf(PropTypes.object)
   };
 
   state = {
@@ -38,4 +35,4 @@ class ContactsApp extends Component {
   }
 }
 
-export default ContactsApp;
+export default LoadingHOC(ContactsApp);

@@ -2,13 +2,15 @@ import React, { Component, PropTypes } from 'react';
 
 //filter the contacts according to the input
 const filteredContacts = (contacts, filterText) => {
-  return contacts.filter(contact => contact.name.includes(filterText));
+  return contacts
+    ? contacts.filter(contact => contact.name.includes(filterText))
+    : [];
 };
 
 const ContactList = ({ contacts, filterText }) =>
   <ul>
     {filteredContacts(contacts, filterText).map(contact =>
-      <li>
+      <li key={contact.email}>
         <img src={contact.picture} role="presentation" />
         <div>
           <strong>
@@ -23,4 +25,8 @@ const ContactList = ({ contacts, filterText }) =>
     )}
   </ul>;
 
+ContactList.prototype = {
+  contacts: PropTypes.arrayOf(PropTypes.object),
+  filterText: PropTypes.string
+};
 export default ContactList;
