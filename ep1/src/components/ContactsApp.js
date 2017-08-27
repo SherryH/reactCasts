@@ -35,4 +35,4 @@ class ContactsApp extends Component {
   }
 }
 
-export default LoadingHOC(ContactsApp);
+export default LoadingHOC('contacts')(ContactsApp);
