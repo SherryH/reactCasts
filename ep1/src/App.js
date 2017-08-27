@@ -8,7 +8,7 @@ class App extends Component {
     contacts: []
   };
   componentDidMount() {
-    fetch('https://api.randomuser.me/?nat=us,gb&results=3')
+    fetch('https://api.randomuser.me/?nat=us,gb&results=50')
       .then(response => {
         return response.json();
       })

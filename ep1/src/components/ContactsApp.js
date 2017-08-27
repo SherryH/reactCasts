@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import '../App.css';
 import SearchBar from './SearchBar';
+import ContactList from './ContactList';
 
 class ContactsApp extends Component {
   static propTypes = {
@@ -28,22 +29,10 @@ class ContactsApp extends Component {
           filterText={this.state.filterText}
           onUserChange={this.getUserInput}
         />
-        <ul>
-          {this.props.contacts.map(contact =>
-            <li>
-              <img src={contact.picture} role="presentation" />
-              <div>
-                <strong>
-                  {contact.name}
-                </strong>
-                <br />
-                <div>
-                  {contact.email}
-                </div>
-              </div>
-            </li>
-          )}
-        </ul>
+        <ContactList
+          contacts={this.props.contacts}
+          filterText={this.state.filterText}
+        />
       </div>
     );
   }
