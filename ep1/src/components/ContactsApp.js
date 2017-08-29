@@ -6,7 +6,8 @@ import LoadingHOC from './HOC/LoadingHOC';
 
 class ContactsApp extends Component {
   static propTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.object)
+    contacts: PropTypes.arrayOf(PropTypes.object),
+    loadingTime: PropTypes.string
   };
 
   state = {
@@ -30,6 +31,9 @@ class ContactsApp extends Component {
           contacts={this.props.contacts}
           filterText={this.state.filterText}
         />
+        <p>
+          The loading time is {this.props.loadingTime}
+        </p>
       </div>
     );
   }
